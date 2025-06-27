@@ -1,51 +1,24 @@
-#include<stdio.h>
-int main()
-{
-    char name[100];
-    double math,eng,sst,urdu;
-    printf("enter the name of the student = ");
-    scanf("%s",&name);
-    printf("enter obtained marks in MATH = ");
-    scanf("%lf", &math);
-    printf("enter obtained marks in ENGLISH = ");
-     scanf("%lf", &eng);
-     printf("enter obtained marks in SST = ");
-     scanf("%lf", &sst);
-     printf("enter obtained marks in URDU = ");
-     scanf("%lf", &urdu);
-    double tmarks=math+eng+sst+urdu;
-    double percentage=tmarks/400*100;
+#include <stdio.h>
 
-    if (percentage>=90 && percentage<=100)
-    {
-        printf("%s has obtained %lf precent and is passing with Grade O ",name, percentage);
+int main() {
+    char name[50];
+    float math, eng, sst, urdu, percentage;
 
-    }
-    else if (percentage>=50 && percentage<60)
-    {
-        printf("%s has obtained %lf precent and is passing with Grade D ",name, percentage);
+    printf("Enter the name of the student: ");
+    scanf("%s", name);
 
-    }
-    else if (percentage>=60 && percentage<70)
-    {
-        printf("%s has obtained %lf precent and is passing with Grade C ",name, percentage);
+    printf("Enter obtained marks in MATH: ");
+    scanf("%f", &math);
+    printf("Enter obtained marks in ENGLISH: ");
+    scanf("%f", &eng);
+    printf("Enter obtained marks in SST: ");
+    scanf("%f", &sst);
+    printf("Enter obtained marks in URDU: ");
+    scanf("%f", &urdu);
 
-    }
-    else if (percentage>=70 && percentage<80)
-    {
-        printf("%s has obtained %lf precent and is passing with Grade B ",name, percentage);
+    percentage = (math + eng + sst + urdu) / 4;
 
-    }
-    else if (percentage>=80 && percentage<90)
-    {
-        printf("%s has obtained %lf precent and is passing with Grade A ",name, percentage);
+    printf("%s has obtained %.2f percent and has %s\n", name, percentage, (percentage >= 33) ? "passed" : "failed");
 
-    }
-    else 
-    {
-        printf("%s has obtained %lf  percent and has failed ",name , percentage);
-
-    }
     return 0;
-
 }

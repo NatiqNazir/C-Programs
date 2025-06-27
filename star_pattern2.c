@@ -6,16 +6,12 @@ int main() {
     printf("Enter the number of rows: ");
     scanf("%d", &rows);
 
-    for (i = 1; i <= rows; i++) {
+    for (i = rows; i >= 1; i--) {
         for (j = 1; j <= i; j++) {
-            if (j == 1 || j == i || i == rows)
-                printf("*");
-            else
-                printf(" ");
+            printf("*");
         }
         printf("\n");
     }
 
     return 0;
 }
-

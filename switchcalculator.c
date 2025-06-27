@@ -1,34 +1,41 @@
-#include<stdio.h>
-int main()
-{
+#include <stdio.h>
+
+int main() {
     char op;
-    double num1,num2;
-    printf("enter the operator (+,-,/,*)");
-    scanf("%c",&op);
-    printf("Enter the operands");
-    scanf("%lf %lf",&num1 , &num2);
-    switch (op)
-    {
+    float a, b, result;
+
+    printf("Enter the operator (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    printf("Enter the first number: ");
+    scanf("%f", &a);
+    printf("Enter the second number: ");
+    scanf("%f", &b);
+
+    switch (op) {
         case '+':
-        
-            printf("result %lf",num1+num2);
+            result = a + b;
             break;
-        
         case '-':
-        
-            printf("result %lf",num1-num2);
+            result = a - b;
             break;
-        
-        case '/':
-        
-            printf("result %lf",num1/num2);
-            break;
-        
         case '*':
-        
-            printf("result %lf",num1*num2);
+            result = a * b;
             break;
-        
+        case '/':
+            if (b != 0)
+                result = a / b;
+            else {
+                printf("Division by zero is not allowed.\n");
+                return 1;
+            }
+            break;
+        default:
+            printf("Invalid operator.\n");
+            return 1;
     }
+
+    printf("Result: %.2f\n", result);
+
     return 0;
 }

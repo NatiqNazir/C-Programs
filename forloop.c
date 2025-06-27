@@ -1,14 +1,19 @@
-#include<stdio.h>
-int main()
-{
-    int i,j,k;
-    printf("enter the numbers ");
-    scanf("%d",&j);
+#include <stdio.h>
 
-    for (i=1 ; i <=j ; ++i)
-{
- k+=i;
-}   
-printf("%d",k);
+int main() {
+    int start, end, i;
+
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    for (i = start; i <= end; i++) {
+        printf("%d ", i);
+    }
+
+    printf("\n");
+
     return 0;
 }
